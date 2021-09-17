@@ -4,7 +4,6 @@ import { GlobalContext } from '../context/GlobalState';
 export const MovieControls = ({ movie, type }) => {
   const { removeMovieFromWatchlist, addMovieToWatched, moveToWatchlist, removeFromWatched } = useContext(GlobalContext);
 
-  console.log(type)
   return (
     <div className="inner-card-controls">
       {type === "watchlist" && (

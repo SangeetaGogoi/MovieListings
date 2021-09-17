@@ -31,8 +31,6 @@ export const GlobalProvider = props => {
   }
 
   const removeMovieFromWatchlist = (id) => {
-
-    console.log(id, 'inside here')
     dispatch({ type: "REMOVE_MOVIE_FROM_WATCHLIST", payload: id });
   }
 
@@ -45,7 +43,6 @@ export const GlobalProvider = props => {
   };
 
   const removeFromWatched = id => {
-    console.log(id, 'watched here')
     dispatch({ type: "REMOVE_FROM_WATCHED", payload: id });
   }
 
