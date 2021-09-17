@@ -10,15 +10,17 @@ export const Add = () => {
 
     setQuery(e.target.value);
 
-    fetch(`https://api.themoviedb.org/3/search/movie?api_key=${process.env.REACT_APP_TMDB_KEY}&langauge=en-US&page=1&include_adult=false&query=${e.target.value}`)
-      .then(response => response.json())
-      .then(data => {
-        if (!data.errors) {
-          setResults(data.results);
-        } else {
-          setResults([]);
-        }
-      })
+    if (e.target.value.length) {
+      fetch(`https://api.themoviedb.org/3/search/movie?api_key=${process.env.REACT_APP_TMDB_KEY}&langauge=en-US&page=1&include_adult=false&query=${e.target.value}`)
+        .then(response => response.json())
+        .then(data => {
+          if (!data.errors) {
+            setResults(data.results);
+          } else {
+            setResults([]);
+          }
+        })
+    }
   };
 
   return (
